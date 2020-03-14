@@ -22,6 +22,119 @@
           <button type="submit" class="btn btn-primary">Update</button>
       </div>
   </form>
+  <form method="post" class="form-horizontal" enctype="multipart/form-data" >{% csrf_token %}
+    <div class="form-body">
+        <h2 class="margin-bottom-20"> User Info - {{user.username}} </h2>
+        <h3 class="form-section">Person Info</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">First Name:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{ user.first_name }} </p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Last Name:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{ user.last_name }} </p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Gender:</label>
+                    <div class="col-md-9">
+                        <p class="form-control">{{ user.gender }}</p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Date of Birth:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{ user.birth_date}} </p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Education:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> Graduation </p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+           
+            <!--/span-->
+        </div>
+        <!--/row-->
+        <h3 class="form-section">Address</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Address:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{user.address}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">City:</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{ user.location }} </p>
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">BIO</label>
+                    <div class="col-md-9">
+                        <p class="form-control"> {{ user.bio }} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label col-md-3">Image:</label>
+                    <div class="col-md-9">
+                        <input type="file" class="custom-file-input" id="customFile">
+                    </div>
+                </div>
+            </div>
+            <!--/span-->
+        </div>
+        <!--/row-->
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 </div>
 </div>
 {% endblock content %}

@@ -80,7 +80,11 @@ def result(request):
 
 @login_required
 def profile(request):
-    pro = Profile
+    return render(request, 'profile.html')
+
+
+
+def profileEdit(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -98,13 +102,8 @@ def profile(request):
     context = {
         'u_form': u_form,
         'p_form': p_form,
-        'pro': pro
     }
-    return render(request, 'profile.html', context)
-
-
-def profileEdit(request):
-    return render(request, 'profileEdit.html')
+    return render(request, 'profileEdit.html',context)
 
 
 def feedback(request):
